@@ -9,6 +9,16 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 def rfr_fillna(df_all):
+
+    '''
+    func:对于原来的表格进行缺失值填充，使用的方法是随机森林
+    
+    paramas: 
+    df_all:原来需要填充的表格
+    
+    return:df_adda（新的表格）,model（填充模型）,MinMax_1st(归一化模型1),MinMax_2nd(归一化模型2)
+    '''    
+    
     # 将数据分段，选择好要进行预测的因变量和自变量
     user_id = df_all.iloc[:,0]
     X = df_all.iloc[:,1:-1]
